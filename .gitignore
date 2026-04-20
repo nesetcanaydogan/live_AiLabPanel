@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime / Build
+node_modules
+dist
+dist-ssr
+.cache
+.vite
+.next
+.turbo
+coverage
+
+# Environment / Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.csr
+
+# Documentation & Sensitive Files
+*.pdf
+Swagger*
+architecture_diagrams/
+
+# Editor / System
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db
+
+# Project Specific
+.gemini
+./.planning
+/.planning
+GEMINI.md
+dockerfile
+Docker
+.dockerignore

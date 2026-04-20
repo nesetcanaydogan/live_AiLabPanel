@@ -1,0 +1,17 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./firebaseConfig.js"; // Initialize Firebase immediately
+import App from "./App.jsx";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContent.jsx";
+import "./index.css"; // File that contains TailwindCSS
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <AuthProvider>
+        <App />
+      </AuthProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
