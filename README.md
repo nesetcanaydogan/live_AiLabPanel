@@ -2,6 +2,8 @@
 
 ![Status](https://img.shields.io/badge/Status-Public_Release-green) ![Version](https://img.shields.io/badge/Version-1.0.0-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+**🚀 Live Production:** [ailab.org.tr](https://ailab.org.tr)
+
 A modern, responsive, and robust **Laboratory Management System** designed for the **KTUN AI & Data Science Laboratory**. This client-side application serves as the central hub for lab members, captains, and administrators to manage projects, tasks, room occupancy, and team communications efficiently.
 
 > **Note:** This repository is a sanitized public export. Sensitive configurations and internal documentation have been removed for security compliance.
