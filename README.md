@@ -1,97 +1,97 @@
 # 🧠 AI Lab Management System (Client)
 
-![Status](https://img.shields.io/badge/Status-Active_Development-blue) ![Version](https://img.shields.io/badge/Version-1.0.0-green) ![License](https://img.shields.io/badge/License-Private-red)
+![Status](https://img.shields.io/badge/Status-Public_Release-green) ![Version](https://img.shields.io/badge/Version-1.0.0-blue) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-A modern, responsive, and robust **Laboratory Management System** designed for the **Artificial Intelligence & Data Science Laboratory**. This client-side application serves as the central hub for lab members, captains, and administrators to manage projects, tasks, room occupancy, and team communications efficiently.
+A modern, responsive, and robust **Laboratory Management System** designed for the **KTUN AI & Data Science Laboratory**. This client-side application serves as the central hub for lab members, captains, and administrators to manage projects, tasks, room occupancy, and team communications efficiently.
+
+> **Note:** This repository is a sanitized public export. Sensitive configurations and internal documentation have been removed for security compliance.
 
 ---
 
 ## 🚀 Tech Stack
 
-We utilize a cutting-edge frontend stack to ensure performance, scalability, and a senior-grade architectural foundation.
+- **[React 19](https://react.dev/)** & **[Vite](https://vitejs.dev/)**: Core framework and next-gen build tooling.
+- **[TailwindCSS](https://tailwindcss.com/)**: Utility-first styling.
+- **[Firebase](https://firebase.google.com/)**: Secure Auth & Storage integrations.
+- **[Axios](https://axios-http.com/)**: Standardized API client with interceptors for JWT injection.
+- **[Docker](https://www.docker.com/)** & **[Nginx](https://www.nginx.com/)**: Production-ready containerization and optimized serving.
 
-### **Core Framework & Build Tool**
-- **[React 19](https://react.dev/)**: Leveraging the latest library features for web user interfaces.
-- **[Vite](https://vitejs.dev/)**: Next Generation Frontend Tooling for lightning-fast HMR and optimized builds.
+---
 
-### **Styling & UI**
-- **[TailwindCSS](https://tailwindcss.com/)**: Utility-first CSS framework for rapid UI development.
-- **[Lucide React](https://lucide.dev/)**: Beautiful, consistent, and lightweight icon set.
+## 🛠 Getting Started
 
-### **State Management & Architecture**
-- **React Context API**: Centralized global state (Authentication, User Sessions, RBAC).
-- **Custom Hooks**: Encapsulated business logic for cleaner, testable components.
-- **Role-Based Access Control (RBAC)**: Fine-grained permissions at the router level.
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+- A Firebase Project (for Auth & Storage)
 
-### **Networking & Integrations**
-- **[Axios](https://axios-http.com/)**: Promise-based HTTP client with global interceptors for automatic Firebase token injection and standardized error handling.
-- **[Firebase](https://firebase.google.com/)**: 
-    - **Authentication**: Secure JWT-based identity management.
-    - **Storage**: Direct client-side uploads for reports and profile images.
-- **[React Router Dom v7](https://reactrouter.com/)**: Client-side routing with nested, protected route guards.
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ktun-ailab/client.git
+   cd client
+   ```
 
-### **DevOps & Containerization**
-- **[Docker](https://www.docker.com/)**: Multi-stage production builds for minimal image size (~25MB).
-- **[Nginx](https://www.nginx.com/)**: Optimized web server with SPA routing, static asset caching, and a `/health` endpoint for orchestration.
+2. **Setup Environment Variables:**
+   Copy the example environment file and fill in your credentials:
+   ```bash
+   cp .env.example .env
+   ```
+   *Required variables include Firebase Config and the Backend API URL.*
+
+3. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
+
+4. **Run Development Server:**
+   ```bash
+   npm run dev
+   ```
 
 ---
 
 ## 📂 Project Structure
 
-The project follows a modular and scalable directory structure:
-
 ```bash
 src/
-├── 📂 assets/          # Static assets (images, SVGs)
-├── 📂 components/      # Reusable UI components
-│   ├── 📂 admin/       # Specialized administrative modules
-│   ├── 📂 auth/        # Login/Register form abstractions
-│   ├── 📂 profile/     # User profile update components
-│   ├── ErrorBoundary.jsx # Global safety net for runtime errors
-│   ├── ProtectedRoute.jsx # RBAC-enhanced route guard
-│   └── ...
-├── 📂 context/         # Global State Providers (AuthContent, etc.)
-├── 📂 layouts/         # Page Layout Wrappers (Sidebar, Header)
-├── 📂 pages/           # Application Views (Routes with Code Splitting)
-├── 📂 services/        # API Layer (Axios configuration & Services)
-├── 📂 utils/           # Helper functions (axiosInstance, imageUtils)
-└── firebaseConfig.js   # Centralized Firebase initialization
+├── 📂 components/      # Reusable UI components & RBAC Guards
+├── 📂 context/         # Global State (Auth, RBAC)
+├── 📂 layouts/         # Page Layout Wrappers
+├── 📂 pages/           # Application Views (Lazy Loaded)
+├── 📂 services/        # API Layer & Services
+└── 📂 utils/           # Shared Utilities (Axios, Image Processing)
 ```
 
 ---
 
-## ✨ Key Features
+## 🔐 Security & Compliance
 
-### 🔐 **Advanced Security (RBAC)**
-- **Role-Based Access Control**: Prevents unauthorized component mounting by checking permissions (`Admin`, `Captain`, `Member`) at the router level.
-- **Automatic Token Synchronization**: Axios interceptors ensure every request is authenticated with a fresh Firebase ID token.
-- **UX-Aware Guards**: Redirects users back to their intended destination after a successful login.
-
-### ⚡ **High Performance & Stability**
-- **Code Splitting**: Implemented via `React.lazy()` and `Suspense` to ensure users only download the code they need.
-- **Optimized Auth Initialization**: A singleton promise pattern in the networking layer eliminates artificial delays during startup.
-- **Global Error Boundary**: Catches and handles UI crashes gracefully, offering a professional fallback and reset mechanism.
-
-### 👥 **Team & Report Management**
-- **Direct Firebase Upload**: Reports are uploaded directly to Firebase Storage with strict PDF and 15MB file size enforcement.
-- **Metadata Synchronization**: Automatic backend updates after successful storage operations.
-- **Task Tracking**: Real-time status updates with visual feedback for project contributors.
-
-### 📊 **Real-Time Monitoring**
-- **Room Occupancy**: Live statistics on laboratory attendance.
-- **Hardware Control**: Integrated UI for managing laboratory access and utilities (Electricity/Door status).
+- **Sanitized Export:** All internal API keys, private IPs, and sensitive developer logs have been stripped.
+- **RBAC:** Fine-grained Role-Based Access Control implemented at the router and component levels.
+- **Auto-Auth:** Axios interceptors handle Firebase ID Token refreshing and injection automatically.
+- **Secure Handling:** No sensitive data is stored in local storage; strictly relying on Firebase Auth state.
 
 ---
 
 ## 🐳 Docker Deployment
 
-To build the production image with optimized Nginx serving:
+To build and run the production-optimized image:
 
 ```bash
 docker build \
-  --build-arg VITE_API_KEY="https://api.ailab.org.tr" \
+  --build-arg VITE_API_BASE_URL="https://api.yourdomain.com" \
   --build-arg VITE_FIREBASE_API_KEY="..." \
-  -t ailab-panel:v1.0 .
+  -t ailab-panel:latest .
+
+docker run -p 80:80 ailab-panel:latest
 ```
 
-*Developed for the KTUN AI & Data Science Laboratory.*
+---
+
+## 📄 License & Contributing
+
+- **License:** Distributed under the **MIT License**. See `LICENSE` for more information.
+- **Contributing:** Contributions are welcome! Please read `CONTRIBUTING.md` for our code of conduct and submission process.
+
+*Developed by the KTUN AI & Data Science Laboratory Team.*

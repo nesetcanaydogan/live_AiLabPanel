@@ -3,10 +3,9 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 
 /**
- * Senior Architect Note: Using VITE_API_KEY as the baseURL. 
- * Recommendation: Rename this environment variable to VITE_API_BASE_URL for clarity.
+ * Senior Architect Note: Using VITE_API_BASE_URL as the baseURL for all API requests.
  */
-const BASE_URL = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,

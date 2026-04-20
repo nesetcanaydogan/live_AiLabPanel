@@ -1,7 +1,9 @@
 {
-  "name": "client",
-  "private": true,
-  "version": "0.0.0",
+  "name": "ktun-ailab-panel",
+  "private": false,
+  "version": "1.0.0",
+  "description": "KTUN AI & Data Science Laboratory Management System Client",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
