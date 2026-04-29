@@ -9,6 +9,7 @@ import ErrorBoundary from "./components/ErrorBoundary.jsx";
 // Senior Architect Note: Using lazy-loading for all page components to optimize initial bundle size.
 // This significantly improves initial load performance (LCP) for ready-to-publish applications.
 const LoginPage = lazy(() => import("./pages/LoginPage.jsx"));
+const LandingPage = lazy(() => import("./pages/LandingPage.jsx"));
 const RegistrationForm = lazy(() => import("./pages/RegisterPage.jsx"));
 const AdminDashboard = lazy(() => import("./pages/MainDashboard.jsx"));
 const ProfilePage = lazy(() => import("./pages/MyProfilePage.jsx"));
@@ -33,7 +34,7 @@ function App() {
       <Suspense fallback={<GlobalLoader />}>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegistrationForm />} />
           <Route path="/terms" element={<TermsPage />} />
