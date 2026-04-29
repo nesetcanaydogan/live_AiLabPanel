@@ -10,7 +10,7 @@ const LoginPage = () => {
         <div className="max-w-md mx-auto px-4 sm:px-6">
           <div className="text-center">
             <div className="inline-flex flex-col items-center">
-              <div className="w-32 h-12 sm:w-40 sm:h-14 rounded-lg flex items-center justify-center mb-3 sm:mb-4 my-3">
+              <div className="w-20 h-6 sm:w-40 sm:h-14 rounded-lg flex items-center justify-center mb-3 sm:mb-4 my-3">
                 <img src="/Group-1.png" alt="Ai Lab Logo" />
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold text-[#0D1552] my-3 mb-0">

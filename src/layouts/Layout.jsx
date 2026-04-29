@@ -49,7 +49,7 @@ const Layout = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-center relative w-full">
             <div className="flex items-center">
-              <div className="w-32 h-12 sm:w-40 sm:h-14 rounded-lg flex items-center justify-center m-5">
+              <div className="w-20 h-6 sm:w-40 sm:h-14 rounded-lg flex items-center justify-center m-5">
                 <img src="/Group-1.png" alt="Ai Lab Logo" />
               </div>
             </div>
@@ -90,7 +90,9 @@ const Layout = () => {
             <button
               className={getNavStyle("/messages", !canSendMessages)}
               onClick={() => canSendMessages && navigate("/messages")}
-              title={!canSendMessages ? "Bu işlem için yetkiniz bulunmuyor." : ""}
+              title={
+                !canSendMessages ? "Bu işlem için yetkiniz bulunmuyor." : ""
+              }
             >
               <Send size={18} />
               <span>Mesaj Gönder</span>
